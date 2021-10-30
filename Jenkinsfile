@@ -5,7 +5,7 @@ pipeline {
   }
   tools {
     maven 'localMaven'
-    jdk 'localJdk'
+    jdk 'localJDK'
   }
   stages {
     stage('Build') {
@@ -22,8 +22,8 @@ pipeline {
     stage('SonarQube Scan') {
       steps {
         sh """mvn sonar:sonar \
-  -Dsonar.host.url=http://54.83.81.139:9000 \
-  -Dsonar.login=7cd26bbfc235b69d8b2c9fcb9e9284b04b11d452"""
+  -Dsonar.host.url=http://54.173.244.154:9000 \
+  -Dsonar.login=8ad806c3df888ae7421c3cd5f9e785c7d2323d58"""
       }
     }
     stage('Upload to Artifactory') {
